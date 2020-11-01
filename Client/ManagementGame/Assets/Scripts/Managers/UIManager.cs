@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using GameDataModels;
+
 public class UIManager : MonoBehaviour
 {
     public static UIManager gInstance;
 
-    public GameObject StartMenu;
-    public InputField UsernameField;
+    public GameManager GameManager;
+    public TextMeshProUGUI CurrencyElement;
 
     private void Awake()
     {
@@ -23,10 +26,13 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        CurrencyElement.text = "Currency: " + GameManager.GetPlayerMoney(CurrencyType.STANDARD);
+    }
+
     public void ConnectToServer()
     {
-        StartMenu.SetActive(false);
-        UsernameField.interactable = false;
-        Client.gInstance.ConnectToServer();
+        //Client.gInstance.ConnectToServer();
     }
 }

@@ -34,4 +34,14 @@ public class GameManager : MonoBehaviour
         }
         Debug.Log(mPlayerData.GetCurrencyTypeAmount(CurrencyType.STANDARD));
     }
+
+    /// <summary>
+    /// Get the current amount of the given currency type
+    /// </summary>
+    /// <param name="type"></param>
+    /// <returns></returns>
+    public long GetPlayerMoney(CurrencyType type)
+    {
+        return mPlayerData.GetCurrencyTypeAmount(type);
+    }
 }
