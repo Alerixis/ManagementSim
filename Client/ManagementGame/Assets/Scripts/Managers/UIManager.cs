@@ -11,9 +11,15 @@ public class UIManager : MonoBehaviour
     public static UIManager gInstance;
 
     public GameManager GameManager;
-    public TextMeshProUGUI CurrencyElement;
 
-    private void Awake()
+    public TextMeshProUGUI CurrencyElement;
+    public Button StockButton;
+    public Button PriceButton;
+
+    private StockManager mStockManager;
+
+
+    private void Start()
     {
         if (gInstance == null)
         {
@@ -24,6 +30,8 @@ public class UIManager : MonoBehaviour
             Debug.Log("Instance already exists, reallocating singleton (UIManager).");
             Destroy(this);
         }
+
+        mStockManager = GameManager.gameObject.GetComponent<StockManager>();
     }
 
     private void FixedUpdate()

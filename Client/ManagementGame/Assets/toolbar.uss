@@ -1,0 +1,30 @@
+.toolbar-button {
+    height: 76px;
+    margin-top: 7px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    border-top-left-radius: 23px;
+    border-bottom-left-radius: 23px;
+    border-top-right-radius: 23px;
+    border-bottom-right-radius: 23px;
+    border-left-width: 4px;
+    border-right-width: 4px;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+    border-left-color: rgba(0, 0, 0, 255);
+    border-right-color: rgba(0, 0, 0, 255);
+    border-top-color: rgba(0, 0, 0, 255);
+    border-bottom-color: rgba(0, 0, 0, 255);
+}
+
+.toolbar-button:hover {
+    border-left-color: rgba(119, 231, 77, 255);
+    border-right-color: rgba(119, 231, 77, 255);
+    border-top-color: rgba(119, 231, 77, 255);
+    border-bottom-color: rgba(119, 231, 77, 255);
+}
+
+.toolbar-button:active {
+    background-color: rgba(103, 190, 82, 255);
+}

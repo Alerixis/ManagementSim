@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.CollabProxy.Editor", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VSCode.Editor", "Unity.VSCode.Editor.csproj", "{9E6DBA3E-4D83-30D9-BD27-D4458448B501}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.UI.Builder.Editor", "Unity.UI.Builder.Editor.csproj", "{93E8C166-C445-BF6F-C485-2FC52162F2CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,10 @@ Global
 		{9E6DBA3E-4D83-30D9-BD27-D4458448B501}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E6DBA3E-4D83-30D9-BD27-D4458448B501}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E6DBA3E-4D83-30D9-BD27-D4458448B501}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93E8C166-C445-BF6F-C485-2FC52162F2CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93E8C166-C445-BF6F-C485-2FC52162F2CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93E8C166-C445-BF6F-C485-2FC52162F2CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93E8C166-C445-BF6F-C485-2FC52162F2CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

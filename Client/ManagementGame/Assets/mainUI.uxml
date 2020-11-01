@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="screen" style="flex-grow: 1; flex-direction: row; justify-content: space-between;">
+        <Style src="toolbar.uss" />
+        <ui:VisualElement name="left" style="justify-content: center; width: 92px;">
+            <ui:VisualElement name="toolbar">
+                <ui:Button name="StockButton" class="toolbar-button" style="background-image: url(&apos;/Assets/Images/cart.png&apos;);" />
+                <ui:Button name="PriceButton" class="toolbar-button" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="right" />
+    </ui:VisualElement>
+</ui:UXML>

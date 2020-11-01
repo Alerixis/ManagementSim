@@ -9,7 +9,7 @@ public class StockManager : MonoBehaviour
     private Dictionary<ProductType, Product> mStock;
 
     // Start is called before the first frame update
-    private void Start()
+    private void Awake()
     {
         mStock = new Dictionary<ProductType, Product>();
         foreach(ProductType value in Enum.GetValues(typeof(ProductType)))
