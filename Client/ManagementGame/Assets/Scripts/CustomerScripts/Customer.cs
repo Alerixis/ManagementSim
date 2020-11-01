@@ -34,12 +34,12 @@ namespace CustomerScripts
         private int mPurchaseChance;
         private int mItemsGrabbed;
         private NavMeshAgent mNavAgent;
-        private Vector3 mNextPosition;
         private Shelf mTargetShelf;
         private CustomerState mCustomerState;
         private Dictionary<ProductType, int> mInventory = new Dictionary<ProductType, int>();
-        private float mWaitToPurchaseTime;
+        private float mWaitToGrabItemTime;
         private int mPurchaseAttempts = 0;
+
         public Customer()
         {
             //TODO: Star Rating should be a weighted roll. Lower stars more likely than higher.
@@ -47,6 +47,7 @@ namespace CustomerScripts
             StarRating = RandomUtils.gRandom.Next(1, 6);
             MoneyLimit = 100;
             MaxPurchaseLimit = 6;
+            MaxPurchaseAttempts = 10;
             mPurchaseChance = RandomUtils.gRandom.Next(40, 101);
             Array products = Enum.GetValues(typeof(ProductType));
             MostWantedProduct = (ProductType)products.GetValue(RandomUtils.gRandom.Next(0, products.Length));
@@ -67,7 +68,7 @@ namespace CustomerScripts
                 {
                     //Set a random wait at the shelf for 1 - 3 seconds for slight realism
                     mCustomerState = CustomerState.Waiting;
-                    mWaitToPurchaseTime = RandomUtils.gRandom.Next(1, 3);
+                    mWaitToGrabItemTime = RandomUtils.gRandom.Next(1, 3);
                 }
                 else if(mCustomerState == CustomerState.MovingToRegister)
                 {
@@ -83,12 +84,12 @@ namespace CustomerScripts
 
             if (mCustomerState == CustomerState.Waiting)
             {
-                if(mWaitToPurchaseTime <= 0)
+                if(mWaitToGrabItemTime <= 0)
                 {
                     mCustomerState = CustomerState.Purchasing;
                     RollToPurchaseFromShelf();
                 }
-                mWaitToPurchaseTime -= Time.deltaTime;
+                mWaitToGrabItemTime -= Time.deltaTime;
             }
 
             if (mCustomerState == CustomerState.Purchasing)
@@ -114,7 +115,7 @@ namespace CustomerScripts
         /// </summary>
         private void PurchaseItems()
         {
-            //TODO: Make purchase flow with Game Manager to modify player cash.
+            mCustomerManager.PurchaseItems(mInventory);
             return;
         }
 
@@ -153,7 +154,7 @@ namespace CustomerScripts
                 }
                 else
                 {
-                    //Customer gets mad as hell.
+                    //TODO: Customer gets mad as hell. Customer Happiness system.
                 }
             }
         }

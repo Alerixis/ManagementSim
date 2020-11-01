@@ -72,8 +72,12 @@ public class CustomerManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Takes the inventory given from a customer and buys the products adding the cash to the players current cash.
+    /// </summary>
+    /// <param name="purchases"></param>
     public void PurchaseItems(Dictionary<ProductType, int> purchases)
     {
-        
+        GameManager.BuyProducts(purchases);
     }
 }

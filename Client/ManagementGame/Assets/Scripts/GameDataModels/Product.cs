@@ -7,14 +7,16 @@ using UnityEngine;
 
 namespace GameDataModels
 {
-    public class Product : MonoBehaviour
+    public class Product
     {
-        public double Price { set; get; }
+        public int Amount { set; get; }
+        public int Price { set; get; }
         public ProductType Type { set; get; }
-        public Product(ProductType productType)
+        public Product(ProductType productType, int amount = 0, int price = 1)
         {
             Type = productType;
-            Price = 0;
+            Amount = amount;
+            Price = price;
         }
     }
 }

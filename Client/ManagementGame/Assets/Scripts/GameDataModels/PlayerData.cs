@@ -13,7 +13,6 @@ namespace GameDataModels
         public string ManagerName { set; get; }
 
         private long[] mCurrentCurrency = new long[Enum.GetValues(typeof(CurrencyType)).Length];
-        //private Product[] mCurrentStock = new Product[Enum.GetValues(typeof(ProductType)).Length];
 
         public PlayerData()
         {
